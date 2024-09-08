@@ -2,11 +2,13 @@
 import { microDampingPreset } from "@renderer/components/ui/constants/spring"
 import { animateValue } from "framer-motion"
 
+type _FramerMotionAnimateValue = ReturnType<typeof animateValue>
+
 // TODO scroller lock
 export const springScrollTo = (
   y: number,
   scrollerElement: HTMLElement = document.documentElement,
-) => {
+): _FramerMotionAnimateValue => {
   const scrollTop = scrollerElement?.scrollTop
 
   const stopSpringScrollHandler = () => {
@@ -44,7 +46,7 @@ export const springScrollToElement = (
   delta = 40,
 
   scrollerElement: HTMLElement = document.documentElement,
-) => {
+): _FramerMotionAnimateValue => {
   const y = calculateElementTop(element)
 
   const to = y + delta

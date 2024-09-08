@@ -3,7 +3,7 @@ import { createStore, useAtom, useAtomValue, useSetAtom } from "jotai"
 import { selectAtom } from "jotai/utils"
 import { useCallback } from "react"
 
-export const jotaiStore = createStore()
+export const jotaiStore: ReturnType<typeof createStore> = createStore()
 
 export const createAtomAccessor = <T>(atom: PrimitiveAtom<T>) =>
   [
